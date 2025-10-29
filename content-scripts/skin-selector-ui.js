@@ -56,7 +56,17 @@ class SkinSelectorUI {
         this.button.title = 'Change Audio Visualization';
         this.button.innerHTML = `
             <svg height="100%" version="1.1" viewBox="0 0 36 36" width="100%">
-                <path fill="#fff" d="M8 10h2v16H8V10zm4 3h2v10h-2V13zm4-1h2v12h-2V12zm4 2h2v8h-2v-8zm4-3h2v14h-2V11zm4 4h2v6h-2v-6z"></path>
+                <defs>
+                    <linearGradient id="audioGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#ff4444;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#ff6666;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <circle cx="18" cy="18" r="14" fill="url(#audioGradient)" opacity="0.2"/>
+                <path fill="#fff" d="M18 8c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10S23.52 8 18 8zm0 2c4.41 0 8 3.59 8 8s-3.59 8-8 8-8-3.59-8-8 3.59-8 8-8z"/>
+                <path fill="url(#audioGradient)" d="M14 15v6l5-3z"/>
+                <path fill="#fff" d="M20 15h2v6h-2z"/>
+                <path fill="#fff" d="M23 16h2v4h-2z"/>
             </svg>
         `;
 
