@@ -77,8 +77,8 @@ class BackgroundManager {
             hideSuggestions: true,
             autoTheaterMode: true,
             bandwidthSaver: true,
-            showStats: true,
-            version: '1.0.0'
+            showStats: false,
+            version: '2.0.0'
         };
 
         const current = await chrome.storage.sync.get(defaults);
@@ -91,7 +91,7 @@ class BackgroundManager {
             hideSuggestions: true,
             autoTheaterMode: true,
             bandwidthSaver: true,
-            showStats: true
+            showStats: false
         });
     }
 

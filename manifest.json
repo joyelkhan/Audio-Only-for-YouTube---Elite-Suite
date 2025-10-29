@@ -47,9 +47,13 @@
         "content-scripts/audio-processor.js",
         "content-scripts/visualization-engine.js",
         "content-scripts/skin-manager.js",
+        "content-scripts/skin-selector-ui.js",
         "content-scripts/controller.js"
       ],
-      "css": ["content-scripts/overrides.css"],
+      "css": [
+        "content-scripts/overrides.css",
+        "content-scripts/skin-selector-ui.css"
+      ],
       "run_at": "document_end",
       "all_frames": false
     }

@@ -1,0 +1,175 @@
+/* content-scripts/skin-selector-ui.css */
+/* Styles for the YouTube player skin selector button */
+
+/* Button styling to match YouTube controls */
+.audio-skin-btn {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+}
+
+.audio-skin-btn:hover {
+    opacity: 1;
+}
+
+.audio-skin-btn.active {
+    opacity: 1;
+}
+
+.audio-skin-btn svg {
+    pointer-events: none;
+}
+
+/* Dropdown container */
+.audio-skin-dropdown {
+    position: absolute;
+    background: rgba(28, 28, 28, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 8px;
+    min-width: 220px;
+    max-width: 280px;
+    z-index: 10000;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    animation: slideUp 0.2s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header */
+.skin-dropdown-header {
+    padding: 8px 12px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 8px;
+}
+
+/* Skin list */
+.skin-list {
+    max-height: 400px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.skin-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.skin-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.skin-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+.skin-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Skin item */
+.skin-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    color: #fff;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.skin-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(4px);
+}
+
+.skin-item.active {
+    background: linear-gradient(135deg, rgba(255, 68, 68, 0.2), rgba(255, 102, 102, 0.2));
+    border-left: 3px solid #ff4444;
+    padding-left: 9px;
+}
+
+.skin-icon {
+    font-size: 18px;
+    width: 24px;
+    text-align: center;
+}
+
+.skin-name {
+    flex: 1;
+    font-weight: 500;
+}
+
+.skin-check {
+    color: #ff4444;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Animation for skin change */
+@keyframes skinChange {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.skin-item.active .skin-icon {
+    animation: skinChange 0.3s ease;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .audio-skin-dropdown {
+        min-width: 200px;
+        max-width: 240px;
+    }
+    
+    .skin-item {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+    
+    .skin-icon {
+        font-size: 16px;
+        width: 20px;
+    }
+}
+
+/* Theater mode adjustments */
+.ytp-big-mode .audio-skin-dropdown {
+    bottom: 60px !important;
+}
+
+/* Fullscreen adjustments */
+.ytp-fullscreen .audio-skin-dropdown {
+    bottom: 70px !important;
+}

@@ -29,7 +29,7 @@ class PopupManager {
                 hideSuggestions: true,
                 autoTheaterMode: true,
                 bandwidthSaver: true,
-                showStats: true
+                showStats: false
             }, resolve);
         });
         
