@@ -65,6 +65,8 @@ class BackgroundManager {
         chrome.commands.onCommand.addListener((command) => {
             if (command === 'toggle_audio_mode') {
                 this.toggleAudioMode();
+            } else if (command === 'open_options') {
+                chrome.runtime.openOptionsPage();
             }
         });
     }

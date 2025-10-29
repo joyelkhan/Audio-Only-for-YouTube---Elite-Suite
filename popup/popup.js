@@ -76,11 +76,14 @@ class PopupManager {
             this.toggleStatsVisibility();
         });
 
-        // Feedback link
-        document.getElementById('feedback-link').addEventListener('click', (e) => {
-            e.preventDefault();
-            this.openFeedback();
-        });
+        // Options link - intercept to open options page instead of GitHub
+        const optionsLink = document.getElementById('options-link');
+        if (optionsLink) {
+            optionsLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.openOptions();
+            });
+        }
     }
 
     updateSettingsUI() {
@@ -222,17 +225,13 @@ class PopupManager {
     }
 
     openFeedback() {
-        const subject = encodeURIComponent('Audio Only Elite - Feedback');
-        const body = encodeURIComponent(
-            `I'm using Audio Only Elite v1.0.0\n\n` +
-            `My feedback:\n\n` +
-            `System Info: ${navigator.userAgent}\n` +
-            `YouTube URL: ${this.currentTab?.url || 'N/A'}` 
-        );
-        
-        const mailtoUrl = `mailto:feedback@audioonlyelite.com?subject=${subject}&body=${body}`;
-        
-        chrome.tabs.create({ url: mailtoUrl });
+        chrome.tabs.create({ 
+            url: 'https://github.com/joyelkhan/Audio-Only-for-YouTube---Elite-Suite/issues' 
+        });
+    }
+    
+    openOptions() {
+        chrome.runtime.openOptionsPage();
     }
 }
 
