@@ -6,7 +6,7 @@ Your extension has undergone a **complete SEO transformation** to maximize disco
 
 ---
 
-## 📁 Files Updated
+## 📁 Files Updatedf
 
 ### Core Extension Files
 1. ✅ **manifest.json** - New name, description, and branding

@@ -31,8 +31,8 @@ class SkinSelectorUI {
 
     waitForPlayer() {
         const checkPlayer = setInterval(() => {
-            const controls = document.querySelector('.ytp-right-controls');
-            if (controls) {
+            const controlsLeft = document.querySelector('.ytp-right-controls-left');
+            if (controlsLeft) {
                 clearInterval(checkPlayer);
                 this.createButton();
             }
@@ -46,13 +46,14 @@ class SkinSelectorUI {
         // Check if button already exists
         if (document.getElementById('audio-skin-selector-btn')) return;
 
-        const controls = document.querySelector('.ytp-right-controls');
-        if (!controls) return;
+        const controlsLeft = document.querySelector('.ytp-right-controls-left');
+        if (!controlsLeft) return;
 
         // Create button
         this.button = document.createElement('button');
         this.button.id = 'audio-skin-selector-btn';
         this.button.className = 'ytp-button audio-skin-btn';
+        this.button.setAttribute('data-priority', '1');
         this.button.title = 'Change Audio Visualization';
         this.button.innerHTML = `
             <svg height="100%" version="1.1" viewBox="0 0 36 36" width="100%">
@@ -76,13 +77,8 @@ class SkinSelectorUI {
             this.toggleDropdown();
         });
 
-        // Insert button at the beginning of right controls (before all other buttons)
-        const firstButton = controls.firstElementChild;
-        if (firstButton) {
-            controls.insertBefore(this.button, firstButton);
-        } else {
-            controls.appendChild(this.button);
-        }
+        // Insert button at the end of right-controls-left (like YouTube's expand button)
+        controlsLeft.appendChild(this.button);
 
         // Create dropdown
         this.createDropdown();
