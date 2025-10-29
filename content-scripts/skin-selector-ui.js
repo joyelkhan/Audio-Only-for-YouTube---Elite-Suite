@@ -56,7 +56,7 @@ class SkinSelectorUI {
         this.button.title = 'Change Audio Visualization';
         this.button.innerHTML = `
             <svg height="100%" version="1.1" viewBox="0 0 36 36" width="100%">
-                <path fill="#fff" d="M18 4c-7.73 0-14 6.27-14 14s6.27 14 14 14 14-6.27 14-14S25.73 4 18 4zm0 2c6.65 0 12 5.35 12 12s-5.35 12-12 12S6 24.65 6 18 11.35 6 18 6zm-8 10v4h4v-4h-4zm6 0v4h4v-4h-4zm6 0v4h4v-4h-4z"></path>
+                <path fill="#fff" d="M8 10h2v16H8V10zm4 3h2v10h-2V13zm4-1h2v12h-2V12zm4 2h2v8h-2v-8zm4-3h2v14h-2V11zm4 4h2v6h-2v-6z"></path>
             </svg>
         `;
 
@@ -66,10 +66,10 @@ class SkinSelectorUI {
             this.toggleDropdown();
         });
 
-        // Insert button before settings button
-        const settingsBtn = controls.querySelector('.ytp-settings-button');
-        if (settingsBtn && settingsBtn.parentNode === controls) {
-            controls.insertBefore(this.button, settingsBtn);
+        // Insert button at the beginning of right controls (before all other buttons)
+        const firstButton = controls.firstElementChild;
+        if (firstButton) {
+            controls.insertBefore(this.button, firstButton);
         } else {
             controls.appendChild(this.button);
         }
@@ -147,10 +147,17 @@ class SkinSelectorUI {
         // Position dropdown
         const buttonRect = this.button.getBoundingClientRect();
         const playerRect = document.querySelector('.html5-video-player').getBoundingClientRect();
+        const controlsRect = document.querySelector('.ytp-right-controls').getBoundingClientRect();
 
         this.dropdown.style.display = 'block';
-        this.dropdown.style.bottom = (playerRect.bottom - buttonRect.top + 10) + 'px';
-        this.dropdown.style.right = (playerRect.right - buttonRect.right) + 'px';
+        
+        // Position above the button with proper spacing
+        const bottomOffset = playerRect.bottom - buttonRect.top + 10;
+        this.dropdown.style.bottom = bottomOffset + 'px';
+        
+        // Align with the left edge of the button
+        const rightOffset = playerRect.right - buttonRect.left - this.dropdown.offsetWidth;
+        this.dropdown.style.right = Math.max(10, rightOffset) + 'px';
 
         this.isOpen = true;
         this.button.classList.add('active');
@@ -186,19 +193,20 @@ class SkinSelectorUI {
 
     updateDropdownUI() {
         const items = this.dropdown.querySelectorAll('.skin-item');
-        items.forEach(item => {
+        items.forEach((item, index) => {
             item.classList.remove('active');
             const check = item.querySelector('.skin-check');
             if (check) check.remove();
+            
+            // Add check mark to current skin
+            if (this.skins[index].id === this.currentSkin) {
+                item.classList.add('active');
+                const checkMark = document.createElement('span');
+                checkMark.className = 'skin-check';
+                checkMark.textContent = '✓';
+                item.appendChild(checkMark);
+            }
         });
-
-        // Find and update active item
-        const skinIndex = this.skins.findIndex(s => s.id === this.currentSkin);
-        if (skinIndex >= 0) {
-            const activeItem = items[skinIndex];
-            activeItem.classList.add('active');
-            activeItem.innerHTML += '<span class="skin-check">✓</span>';
-        }
     }
 }
 

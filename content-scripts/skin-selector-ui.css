@@ -11,33 +11,42 @@
     border: none;
     cursor: pointer;
     opacity: 0.9;
-    transition: opacity 0.2s;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .audio-skin-btn:hover {
     opacity: 1;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
 }
 
 .audio-skin-btn.active {
     opacity: 1;
+    background: rgba(255, 68, 68, 0.2);
+    border-radius: 2px;
 }
 
 .audio-skin-btn svg {
     pointer-events: none;
+    width: 100%;
+    height: 100%;
 }
 
 /* Dropdown container */
 .audio-skin-dropdown {
     position: absolute;
     background: rgba(28, 28, 28, 0.98);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 8px;
     padding: 8px;
-    min-width: 220px;
+    min-width: 240px;
     max-width: 280px;
-    z-index: 10000;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(10px);
+    z-index: 99999;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
     animation: slideUp 0.2s ease-out;
 }
 
@@ -102,8 +111,8 @@
 }
 
 .skin-item:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateX(4px);
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(2px);
 }
 
 .skin-item.active {
@@ -172,4 +181,14 @@
 /* Fullscreen adjustments */
 .ytp-fullscreen .audio-skin-dropdown {
     bottom: 70px !important;
+}
+
+/* Prevent button from being hidden */
+.ytp-autohide .audio-skin-btn {
+    opacity: 0.9;
+}
+
+.ytp-autohide .audio-skin-btn:hover,
+.ytp-autohide .audio-skin-btn.active {
+    opacity: 1;
 }
