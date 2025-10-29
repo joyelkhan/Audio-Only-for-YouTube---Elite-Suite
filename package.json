@@ -1,0 +1,24 @@
+{
+  "name": "audio-only-youtube-elite",
+  "version": "2.0.0",
+  "description": "Transform YouTube into a pure audio experience with stunning visualizations",
+  "author": "Abu Naser Khan",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joyelkhan/audio-only-youtube-elite"
+  },
+  "homepage": "https://github.com/joyelkhan",
+  "keywords": [
+    "youtube",
+    "audio",
+    "visualization",
+    "chrome-extension",
+    "music-player",
+    "audio-visualizer",
+    "spectrum-analyzer"
+  ],
+  "scripts": {
+    "test": "echo \"No tests specified\" && exit 0"
+  }
+}

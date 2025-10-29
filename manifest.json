@@ -3,6 +3,8 @@
   "name": "Audio Only for YouTube™ - Elite Suite",
   "version": "2.0.0",
   "description": "Complete YouTube optimization: Audio mode, ad skipping, image blocking, and performance enhancements",
+  "author": "Abu Naser Khan",
+  "homepage_url": "https://github.com/joyelkhan",
   "default_locale": "en",
   
   "icons": {

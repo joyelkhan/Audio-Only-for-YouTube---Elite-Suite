@@ -46,18 +46,12 @@ A production-ready Chrome extension that converts YouTube videos into an elegant
 
 ## 📦 Installation
 
-### Method 1: Load Unpacked (Development)
-
 1. **Download or Clone** this repository
 2. Open Chrome and navigate to `chrome://extensions/`
 3. Enable **Developer mode** (toggle in top-right corner)
 4. Click **"Load unpacked"**
-5. Select the extension folder: `AUDIO ONLY FOR YOUTUBE™ - ELITE EDITION`
+5. Select the extension folder
 6. The extension is now installed! 🎉
-
-### Method 2: Chrome Web Store (Coming Soon)
-
-*Extension will be published to the Chrome Web Store after final testing and icon creation.*
 
 ---
 
@@ -180,107 +174,45 @@ audio-only-youtube-elite/
 
 ## 🔧 Development
 
-### Prerequisites
-
-- Chrome browser (version 88 or higher)
-- Basic knowledge of JavaScript and Chrome Extension APIs
-- Text editor or IDE
-
-### Setup
-
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/audio-only-youtube-elite.git
-
-# Navigate to the directory
-cd "AUDIO ONLY FOR YOUTUBE™ - ELITE EDITION"
-
-# Load the extension in Chrome (see Installation section)
-```
-
 ### Testing
 
 1. Load the extension in developer mode
 2. Navigate to YouTube
 3. Open Chrome DevTools (F12)
 4. Check console for `[AudioOnly]` logs
-5. Test all features and settings
 
 ### Debugging
 
-- **Content Script Logs**: Check the page console on YouTube
-- **Background Script Logs**: Check `chrome://extensions/` → Extension details → Service worker
-- **Popup Logs**: Right-click popup → Inspect
+- **Content Script**: Page console on YouTube
+- **Background Script**: `chrome://extensions/` → Service worker
+- **Popup**: Right-click popup → Inspect
 
 ---
 
-## 📋 TODO / Roadmap
+## 📋 Future Features
 
-### Before Publishing
-- [ ] Create professional PNG icons (16, 32, 48, 128, 512px)
-- [ ] Comprehensive testing on various YouTube layouts
-- [ ] Performance profiling and optimization
-- [ ] Privacy policy document
-- [ ] Store listing assets (screenshots, promotional images)
-
-### Future Features
-- [ ] Multiple language support (i18n)
-- [ ] Custom themes and color schemes
+- [ ] Multiple language support
+- [ ] Custom skin builder
 - [ ] Audio quality selector
-- [ ] Download audio functionality
 - [ ] Playlist support
 - [ ] Statistics dashboard
-- [ ] Export/import settings
-
-### Known Limitations
-- Requires page reload when toggling on/off (by design)
-- Some YouTube UI changes may require updates
-- Video ads may still play (audio only)
 
 ---
 
 ## 🐛 Troubleshooting
 
-### Extension not working?
+### Common Issues
 
-1. **Refresh the page** after enabling the extension
-2. **Check permissions** - Ensure YouTube access is granted
-3. **Update Chrome** - Requires Chrome 88+
-4. **Disable conflicting extensions** - Other YouTube modifiers may interfere
-5. **Clear cache** - Sometimes helps with stubborn issues
-
-### Audio not playing?
-
-1. Check if the video itself is working
-2. Verify volume settings in both player and system
-3. Try disabling and re-enabling audio mode
-4. Check browser console for errors
-
-### UI looks broken?
-
-1. YouTube frequently updates their interface
-2. Try refreshing the page
-3. Check for extension updates
-4. Report the issue with screenshots
+- **Extension not working?** Refresh the page after enabling
+- **Audio not playing?** Check volume settings and browser console
+- **Visualizations not showing?** Enable "Custom Audio Visualizations" in settings
+- **Performance issues?** Try a lower intensity skin (Ambient, Nebula)
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please follow these guidelines:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-### Code Style
-
-- Use ES6+ features
-- Follow existing code structure
-- Add comments for complex logic
-- Test thoroughly before submitting
+Contributions are welcome! Fork the repository, create a feature branch, and submit a pull request.
 
 ---
 
@@ -290,19 +222,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🙏 Acknowledgments
+## 👨‍💻 Author
 
-- Inspired by the need for distraction-free content consumption
-- Built with modern web technologies
-- Designed for performance and user experience
-
----
-
-## 📞 Support
-
-- **Issues**: [GitHub Issues](https://github.com/yourusername/audio-only-youtube-elite/issues)
-- **Email**: feedback@audioonlyelite.com
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/audio-only-youtube-elite/discussions)
+**Abu Naser Khan**  
+GitHub: [@joyelkhan](https://github.com/joyelkhan)
 
 ---
 
