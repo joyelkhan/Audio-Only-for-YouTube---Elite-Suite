@@ -287,4 +287,3 @@ This extension is provided as-is for personal use. Audio visualization technolog
 
 Transform YouTube into your personal audio visualization suite. Choose your skin, hit play, and immerse yourself in the music.
 
-**GODMODE: ENABLED** 🚀✨
