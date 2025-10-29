@@ -68,7 +68,7 @@ class SkinSelectorUI {
 
         // Insert button before settings button
         const settingsBtn = controls.querySelector('.ytp-settings-button');
-        if (settingsBtn) {
+        if (settingsBtn && settingsBtn.parentNode === controls) {
             controls.insertBefore(this.button, settingsBtn);
         } else {
             controls.appendChild(this.button);
