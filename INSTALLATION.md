@@ -1,6 +1,6 @@
 # 📦 Installation Guide
 
-## Audio Only for YouTube™ - Elite Edition
+## YouTube Audio Player - Background Play & Data Saver
 
 This guide will walk you through installing the extension in Chrome.
 
@@ -35,22 +35,22 @@ This guide will walk you through installing the extension in Chrome.
 1. Click the **"Load unpacked"** button
 2. Navigate to the extension folder:
    ```
-   AUDIO ONLY FOR YOUTUBE™ - ELITE EDITION
+   YouTube Audio Player
    ```
 3. Select the folder and click **"Select Folder"** or **"Open"**
 
 ### Step 5: Verify Installation
 
 ✅ You should see the extension card appear with:
-- Extension name: "Audio Only for YouTube™ - Elite Edition"
-- Version: 1.0.0
+- Extension name: "YouTube Audio Player - Background Play & Data Saver"
+- Version: 2.0.0
 - Status: Enabled (toggle should be ON)
 - Icon: Red circular icon
 
 ### Step 6: Pin the Extension (Optional but Recommended)
 
 1. Click the **puzzle piece icon** (🧩) in Chrome's toolbar
-2. Find "Audio Only for YouTube™ - Elite Edition"
+2. Find "YouTube Audio Player - Background Play & Data Saver"
 3. Click the **pin icon** (📌) next to it
 4. The extension icon will now appear in your toolbar
 
@@ -62,7 +62,7 @@ This guide will walk you through installing the extension in Chrome.
 
 1. Click the extension icon in your toolbar
 2. You should see the popup interface with:
-   - "Audio Only Elite" header
+   - "YouTube Audio Player" header
    - Status indicator
    - Toggle switch
    - Settings options
@@ -121,7 +121,7 @@ This guide will walk you through installing the extension in Chrome.
 When you make changes to the extension code:
 
 1. Go to `chrome://extensions/`
-2. Find "Audio Only for YouTube™ - Elite Edition"
+2. Find "YouTube Audio Player - Background Play & Data Saver"
 3. Click the **refresh icon** (🔄) on the extension card
 4. Refresh any open YouTube tabs
 
@@ -132,8 +132,8 @@ When you make changes to the extension code:
 If you want to remove the extension:
 
 1. Go to `chrome://extensions/`
-2. Find "Audio Only for YouTube™ - Elite Edition"
-3. Click **"Remove"**
+2. Find "YouTube Audio Player - Background Play & Data Saver"
+3. Click **"Remove"
 4. Confirm the removal
 
 ---
@@ -196,7 +196,7 @@ If you encounter issues not covered here:
    - Operating system
    - Steps to reproduce the problem
    - Screenshots if applicable
-3. **Email support**: feedback@audioonlyelite.com
+3. **GitHub Issues**: https://github.com/joyelkhan/YouTube-Audio-Player/issues
 
 ---
 

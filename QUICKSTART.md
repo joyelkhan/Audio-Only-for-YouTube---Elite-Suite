@@ -1,6 +1,6 @@
 # ⚡ Quick Start Guide
 
-Get up and running with Audio Only for YouTube™ - Elite Edition in 3 minutes!
+Get up and running with YouTube Audio Player - Background Play & Data Saver in 3 minutes!
 
 ---
 
@@ -14,7 +14,7 @@ Get up and running with Audio Only for YouTube™ - Elite Edition in 3 minutes!
 
 ### Step 2: Pin Extension (Optional)
 1. Click puzzle icon 🧩 in Chrome toolbar
-2. Pin 📌 "Audio Only for YouTube™ - Elite Edition"
+2. Pin 📌 "YouTube Audio Player - Background Play & Data Saver"
 
 ---
 
@@ -118,4 +118,4 @@ That's it! You now have a powerful audio-only YouTube experience.
 
 **Enjoy distraction-free listening!** 🎧
 
-*Audio Only for YouTube™ - Elite Edition v1.0.0*
+*YouTube Audio Player - Background Play & Data Saver v2.0.0*

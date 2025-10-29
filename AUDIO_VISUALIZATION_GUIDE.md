@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Audio Only for YouTube™ Elite Edition now includes a comprehensive audio visualization system with **8 stunning built-in skins** that transform your audio listening experience into a visual masterpiece.
+The YouTube Audio Player - Background Play & Data Saver now includes a comprehensive audio visualization system with **8 stunning built-in skins** that transform your audio listening experience into a visual masterpiece.
 
 ---
 

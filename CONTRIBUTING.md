@@ -1,8 +1,8 @@
-# Contributing to Audio Only for YouTube™ - Elite Edition
+# Contributing to YouTube Audio Player - Background Play & Data Saver
 
 First off, thank you for considering contributing to this project! 🎉
 
-This document provides guidelines for contributing to the Audio Only for YouTube™ - Elite Edition extension.
+This document provides guidelines for contributing to the YouTube Audio Player - Background Play & Data Saver extension.
 
 ---
 
@@ -386,6 +386,6 @@ By contributing, you agree that your contributions will be licensed under the MI
 
 ---
 
-**Thank you for contributing to Audio Only for YouTube™ - Elite Edition!** 🎧
+**Thank you for contributing to YouTube Audio Player - Background Play & Data Saver!** 🎧
 
 Your efforts help make YouTube a better experience for focused listening.

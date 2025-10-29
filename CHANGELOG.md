@@ -1,6 +1,6 @@
 ho# Changelog
 
-All notable changes to the Audio Only for YouTube™ - Elite Edition will be documented in this file.
+All notable changes to the YouTube Audio Player - Background Play & Data Saver will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0] - 2025-10-29
 
-### 🎉 Initial Release - Elite Edition
+### 🎉 Initial Release
 
 #### ✨ Added
 - **Elite Audio Interface**
@@ -78,6 +78,54 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.0.0] - 2025-10-30
+
+### 🚀 Major Update - SEO Optimization & Rebranding
+
+#### ✨ Added
+- **8 Audio Visualization Skins**
+  - Spectrum Analyzer with rainbow frequency bars
+  - Waveform Display with real-time audio waves
+  - Audio Particles with dancing particle effects
+  - Cosmic Nebula with space-inspired visuals
+  - Vintage Equalizer with retro bars
+  - Retro CRT with classic TV display
+  - Cyberpunk Grid with futuristic hexagons
+  - Ambient Colors with soothing gradients
+
+- **Skin Selector UI**
+  - Quick skin switching from YouTube player controls
+  - Live preview gallery in options page
+  - Category-based organization (Analytical, Ambient, Vintage, Futuristic, Organic)
+  - Intensity level indicators (Low, Medium, High)
+
+- **SEO Optimization**
+  - Rebranded to "YouTube Audio Player - Background Play & Data Saver"
+  - Comprehensive README with FAQ section targeting long-tail keywords
+  - GitHub repository optimization guide
+  - Chrome Web Store listing template
+  - 20+ target keywords for search visibility
+
+#### 🔧 Fixed
+- insertBefore error in skin-selector-ui.js (parent node validation)
+- Background playback stability improvements
+
+#### 📝 Documentation
+- Complete README rewrite with SEO structure
+- Added GITHUB_SEO_SETUP.md for repository configuration
+- Added CHROME_STORE_LISTING.md for store submission
+- Added SEO_IMPLEMENTATION_SUMMARY.md for technical overview
+- Added BEFORE_AFTER_COMPARISON.md for visual analysis
+- Added QUICK_START_SEO.md for 15-minute action plan
+
+#### 🎯 Branding Changes
+- Extension name: "YouTube Audio Player - Background Play & Data Saver"
+- Repository name: "YouTube-Audio-Player" (from Audio-Only-for-YouTube---Elite-Suite)
+- Focus on searchable, descriptive naming over marketing fluff
+- Removed trademark symbols and vague branding terms
+
+---
+
 ## [Unreleased]
 
 ### 🔮 Planned Features
@@ -104,7 +152,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Version History
 
-- **1.0.0** (2025-10-29) - Initial Elite Edition release
+- **2.0.0** (2025-10-30) - SEO Optimization & Audio Visualization Suite
+- **1.0.0** (2025-10-29) - Initial release
 
 ---
 
@@ -120,8 +169,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Support
 
 For issues, feature requests, or questions:
-- GitHub Issues: https://github.com/yourusername/audio-only-youtube-elite/issues
-- Email: feedback@audioonlyelite.com
+- GitHub Issues: https://github.com/joyelkhan/YouTube-Audio-Player/issues
+- GitHub Repository: https://github.com/joyelkhan/YouTube-Audio-Player
 
 ---
 
