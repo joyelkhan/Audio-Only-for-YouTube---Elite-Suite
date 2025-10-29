@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Icon Generator</title>
+</head>
+<body>
+    <h2>Generating placeholder icons...</h2>
+    <p id="status">Click the button below to generate and download icons.</p>
+    <button onclick="generateIcons()" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">Generate Icons</button>
+    <div id="downloads"></div>
+
+    <script>
+        function generateIcons() {
+            const sizes = [16, 32, 48, 128, 512];
+            const downloads = document.getElementById('downloads');
+            downloads.innerHTML = '';
+            
+            sizes.forEach(size => {
+                const canvas = document.createElement('canvas');
+                canvas.width = size;
+                canvas.height = size;
+                const ctx = canvas.getContext('2d');
+                
+                // Red background
+                ctx.fillStyle = '#ff4444';
+                ctx.fillRect(0, 0, size, size);
+                
+                // White circle (headphone ring)
+                ctx.fillStyle = '#ffffff';
+                ctx.beginPath();
+                ctx.arc(size/2, size/2, size * 0.35, 0, Math.PI * 2);
+                ctx.fill();
+                
+                // Red inner circle
+                ctx.fillStyle = '#ff4444';
+                ctx.beginPath();
+                ctx.arc(size/2, size/2, size * 0.2, 0, Math.PI * 2);
+                ctx.fill();
+                
+                // Create download link
+                canvas.toBlob(blob => {
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `icon-${size}.png`;
+                    a.textContent = `Download icon-${size}.png`;
+                    a.style.display = 'block';
+                    a.style.margin = '10px 0';
+                    a.style.padding = '5px';
+                    a.style.background = '#f0f0f0';
+                    a.style.textDecoration = 'none';
+                    a.style.color = '#333';
+                    downloads.appendChild(a);
+                    
+                    // Auto-click to download
+                    a.click();
+                });
+            });
+            
+            document.getElementById('status').textContent = 'Icons generated! Check your downloads folder.';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+{
+  "manifest_version": 3,
+  "name": "Audio Only for YouTube™ - Elite Suite",
+  "version": "2.0.0",
+  "description": "Complete YouTube optimization: Audio mode, ad skipping, image blocking, and performance enhancements",
+  "default_locale": "en",
+  
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png",
+    "512": "icons/icon-512.png"
+  },
+  
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs"
+  ],
+  
+  "host_permissions": [
+    "https://*.youtube.com/*",
+    "https://music.youtube.com/*",
+    "https://*/*"
+  ],
+  
+  "options_page": "options/options.html",
+  
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "YouTube Elite Suite",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png"
+    }
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["https://*.youtube.com/*", "https://music.youtube.com/*"],
+      "js": [
+        "content-scripts/audio-processor.js",
+        "content-scripts/visualization-engine.js",
+        "content-scripts/skin-manager.js",
+        "content-scripts/controller.js"
+      ],
+      "css": ["content-scripts/overrides.css"],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ],
+  
+  "background": {
+    "service_worker": "background/background.js",
+    "type": "module"
+  },
+  
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/icon-128.png"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  
+  "commands": {
+    "toggle_audio_mode": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+A",
+        "mac": "Command+Shift+A"
+      },
+      "description": "Toggle Audio-Only Mode"
+    },
+    "toggle_images": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+I",
+        "mac": "Command+Shift+I"
+      },
+      "description": "Toggle Image Hiding"
+    }
+  },
+  
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}

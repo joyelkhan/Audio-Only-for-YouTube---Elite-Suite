@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Only for YouTube™ - Elite Settings</title>
+    <link rel="stylesheet" href="options.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1>🎧 Audio Only for YouTube™</h1>
+                <p class="subtitle">Elite Audio Experience & Visualization Suite</p>
+            </div>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="audio-skins">🎨 Audio Skins</button>
+            <button class="tab-btn" data-tab="general">⚙️ General</button>
+            <button class="tab-btn" data-tab="performance">⚡ Performance</button>
+            <button class="tab-btn" data-tab="about">ℹ️ About</button>
+        </nav>
+
+        <main class="content">
+            <!-- Audio Skins Tab -->
+            <section id="audio-skins" class="settings-section active">
+                <h2>🎨 Audio Visualization Skins</h2>
+                <p class="section-description">Choose how your audio experience looks. Different skins for different moods!</p>
+                
+                <div class="skin-categories">
+                    <button class="category-btn active" data-category="all">All Skins</button>
+                    <button class="category-btn" data-category="analytical">Analytical</button>
+                    <button class="category-btn" data-category="ambient">Ambient</button>
+                    <button class="category-btn" data-category="vintage">Vintage</button>
+                    <button class="category-btn" data-category="futuristic">Futuristic</button>
+                    <button class="category-btn" data-category="organic">Organic</button>
+                </div>
+                
+                <div class="skins-grid" id="skins-container">
+                    <!-- Skins will be dynamically loaded here -->
+                </div>
+                
+                <div class="skin-preview-section">
+                    <h3>Live Preview</h3>
+                    <div class="preview-container">
+                        <canvas id="skin-preview-canvas" width="600" height="300"></canvas>
+                        <div class="preview-controls">
+                            <button id="test-skin-btn" class="btn btn-outline">🎬 Test Animation</button>
+                            <button id="apply-skin-btn" class="btn btn-primary">✓ Apply Skin</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- General Settings Tab -->
+            <section id="general" class="settings-section">
+                <h2>⚙️ General Settings</h2>
+                
+                <div class="setting-group">
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h3>Enable Audio Mode</h3>
+                            <p>Automatically activate audio-only mode on YouTube videos</p>
+                        </div>
+                        <label class="toggle">
+                            <input type="checkbox" id="enabled" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h3>Custom Audio Visualizations</h3>
+                            <p>Show beautiful audio visualizations instead of video</p>
+                        </div>
+                        <label class="toggle">
+                            <input type="checkbox" id="customAudioPlayer" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h3>Preserve YouTube UI</h3>
+                            <p>Keep all YouTube controls and interface visible</p>
+                        </div>
+                        <label class="toggle">
+                            <input type="checkbox" id="preserveUI" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Performance Tab -->
+            <section id="performance" class="settings-section">
+                <h2>⚡ Performance Settings</h2>
+                
+                <div class="setting-group">
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h3>Reduce Bandwidth Usage</h3>
+                            <p>Optimize streaming for audio-only playback (experimental)</p>
+                        </div>
+                        <label class="toggle">
+                            <input type="checkbox" id="reduceBandwidth">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>💡 Performance Tips</h4>
+                        <ul>
+                            <li>Audio visualizations use minimal CPU/GPU resources</li>
+                            <li>Lower intensity skins (Ambient, Nebula) use less power</li>
+                            <li>Bandwidth reduction may affect audio quality on some videos</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Tab -->
+            <section id="about" class="settings-section">
+                <h2>ℹ️ About</h2>
+                
+                <div class="about-content">
+                    <div class="feature-list">
+                        <h3>✨ Features</h3>
+                        <ul>
+                            <li>🎨 8 Beautiful Audio Visualization Skins</li>
+                            <li>🎧 Real-time Audio Processing</li>
+                            <li>⚡ Performance Optimized</li>
+                            <li>🎛️ Full YouTube UI Preservation</li>
+                            <li>🔧 Customizable Experience</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>🚀 Version 2.0.0 - Elite Edition</h4>
+                        <p>Complete audio visualization suite with multiple skins and themes.</p>
+                    </div>
+
+                    <div class="keyboard-shortcuts">
+                        <h3>⌨️ Keyboard Shortcuts</h3>
+                        <div class="shortcut-item">
+                            <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>A</kbd>
+                            <span>Toggle Audio Mode</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="status-message" id="status-message"></div>
+            <button id="save-btn" class="btn btn-primary">💾 Save Settings</button>
+        </footer>
+    </div>
+
+    <script src="skin-gallery.js"></script>
+    <script src="options.js"></script>
+</body>
+</html>

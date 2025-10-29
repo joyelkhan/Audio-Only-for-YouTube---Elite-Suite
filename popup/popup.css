@@ -1,0 +1,296 @@
+/* popup/popup.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 380px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1a1a1a;
+    color: #e0e0e0;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.popup-container {
+    padding: 20px;
+}
+
+.popup-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #333;
+}
+
+.header-icon {
+    font-size: 32px;
+    background: linear-gradient(135deg, #ff4444, #ff6666);
+    border-radius: 8px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-text h1 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 2px;
+}
+
+.header-text p {
+    font-size: 12px;
+    color: #aaa;
+}
+
+.status-section {
+    background: #2d2d2d;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.status-indicator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.status-label {
+    color: #aaa;
+    font-size: 13px;
+}
+
+.status-value {
+    font-weight: 600;
+    font-size: 13px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: #444;
+}
+
+.status-value.active {
+    background: #00aa00;
+    color: #fff;
+}
+
+.status-value.inactive {
+    background: #aa0000;
+    color: #fff;
+}
+
+/* Toggle Switch */
+.toggle-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    width: 100%;
+}
+
+.toggle-text {
+    font-weight: 500;
+    color: #fff;
+}
+
+.toggle-input {
+    display: none;
+}
+
+.toggle-slider {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    background: #555;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.toggle-slider:before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #fff;
+    top: 3px;
+    left: 3px;
+    transition: all 0.3s ease;
+}
+
+.toggle-input:checked + .toggle-slider {
+    background: #ff4444;
+}
+
+.toggle-input:checked + .toggle-slider:before {
+    transform: translateX(20px);
+}
+
+/* Stats Section */
+.stats-section {
+    background: #2d2d2d;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.stats-section h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #fff;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.stat-item {
+    background: #3a3a3a;
+    padding: 8px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.stat-label {
+    display: block;
+    font-size: 11px;
+    color: #aaa;
+    margin-bottom: 4px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Settings Section */
+.settings-section {
+    background: #2d2d2d;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.settings-section h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #fff;
+}
+
+.setting-item {
+    margin-bottom: 10px;
+}
+
+.setting-item:last-child {
+    margin-bottom: 0;
+}
+
+.setting-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 13px;
+    color: #e0e0e0;
+}
+
+.setting-checkbox {
+    display: none;
+}
+
+.checkmark {
+    width: 18px;
+    height: 18px;
+    background: #444;
+    border-radius: 3px;
+    margin-right: 8px;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.setting-checkbox:checked + .checkmark {
+    background: #ff4444;
+}
+
+.setting-checkbox:checked + .checkmark:after {
+    content: '✓';
+    position: absolute;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Shortcut Info */
+.shortcut-info {
+    background: #2d2d2d;
+    border-radius: 8px;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+}
+
+.shortcut-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+}
+
+.shortcut-item kbd {
+    background: #444;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 11px;
+    color: #fff;
+    min-width: 80px;
+    text-align: center;
+}
+
+/* Footer */
+.popup-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: #666;
+    padding-top: 10px;
+    border-top: 1px solid #333;
+}
+
+.feedback a {
+    color: #ff4444;
+    text-decoration: none;
+}
+
+.feedback a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-height: 600px) {
+    .popup-container {
+        padding: 15px;
+    }
+    
+    .stats-section,
+    .shortcut-info {
+        display: none;
+    }
+}

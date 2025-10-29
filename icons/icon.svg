@@ -1,0 +1,29 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="240" fill="#ff4444"/>
+  
+  <!-- Headphone icon -->
+  <g transform="translate(256, 256)">
+    <!-- Left ear cup -->
+    <rect x="-120" y="-40" width="60" height="80" rx="10" fill="#ffffff"/>
+    <rect x="-110" y="-30" width="40" height="60" rx="5" fill="#1a1a1a"/>
+    
+    <!-- Right ear cup -->
+    <rect x="60" y="-40" width="60" height="80" rx="10" fill="#ffffff"/>
+    <rect x="70" y="-30" width="40" height="60" rx="5" fill="#1a1a1a"/>
+    
+    <!-- Headband arc -->
+    <path d="M -100,-40 Q 0,-140 100,-40" stroke="#ffffff" stroke-width="20" fill="none" stroke-linecap="round"/>
+    
+    <!-- Sound waves (left) -->
+    <path d="M -140,0 Q -160,-20 -160,0 Q -160,20 -140,0" stroke="#ffffff" stroke-width="8" fill="none" opacity="0.7"/>
+    <path d="M -160,0 Q -190,-30 -190,0 Q -190,30 -160,0" stroke="#ffffff" stroke-width="6" fill="none" opacity="0.5"/>
+    
+    <!-- Sound waves (right) -->
+    <path d="M 140,0 Q 160,-20 160,0 Q 160,20 140,0" stroke="#ffffff" stroke-width="8" fill="none" opacity="0.7"/>
+    <path d="M 160,0 Q 190,-30 190,0 Q 190,30 160,0" stroke="#ffffff" stroke-width="6" fill="none" opacity="0.5"/>
+  </g>
+  
+  <!-- Elite badge -->
+  <text x="256" y="440" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#ffffff" text-anchor="middle">ELITE</text>
+</svg>

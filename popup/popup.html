@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Only Elite</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="popup-container">
+        <div class="popup-header">
+            <div class="header-icon">🎧</div>
+            <div class="header-text">
+                <h1>Audio Only Elite</h1>
+                <p>Reclaim Your Focus</p>
+            </div>
+        </div>
+
+        <div class="status-section">
+            <div class="status-indicator">
+                <span class="status-label">Current Page:</span>
+                <span class="status-value" id="page-status">Checking...</span>
+            </div>
+            <div class="mode-toggle">
+                <label class="toggle-label">
+                    <span class="toggle-text">Audio-Only Mode</span>
+                    <input type="checkbox" id="main-toggle" class="toggle-input">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="stats-section" id="stats-section">
+            <h3>Performance Stats</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-label">Bandwidth Saved</span>
+                    <span class="stat-value" id="bandwidth-saved">0 MB</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Battery Impact</span>
+                    <span class="stat-value" id="battery-impact">Low</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">CPU Usage</span>
+                    <span class="stat-value" id="cpu-usage">Reduced</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="settings-section">
+            <h3>Elite Settings</h3>
+            
+            <div class="setting-item">
+                <label class="setting-label">
+                    <input type="checkbox" id="hide-suggestions" class="setting-checkbox">
+                    <span class="checkmark"></span>
+                    Hide Video Suggestions
+                </label>
+            </div>
+            
+            <div class="setting-item">
+                <label class="setting-label">
+                    <input type="checkbox" id="auto-theater" class="setting-checkbox">
+                    <span class="checkmark"></span>
+                    Auto Theater Mode
+                </label>
+            </div>
+            
+            <div class="setting-item">
+                <label class="setting-label">
+                    <input type="checkbox" id="bandwidth-saver" class="setting-checkbox">
+                    <span class="checkmark"></span>
+                    Bandwidth Saver Mode
+                </label>
+            </div>
+            
+            <div class="setting-item">
+                <label class="setting-label">
+                    <input type="checkbox" id="show-stats" class="setting-checkbox">
+                    <span class="checkmark"></span>
+                    Show Performance Stats
+                </label>
+            </div>
+        </div>
+
+        <div class="shortcut-info">
+            <div class="shortcut-item">
+                <kbd>Ctrl+Shift+A</kbd>
+                <span>Toggle Audio Mode</span>
+            </div>
+        </div>
+
+        <div class="popup-footer">
+            <div class="version">v1.0.0</div>
+            <div class="feedback">
+                <a href="#" id="feedback-link">Send Feedback</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

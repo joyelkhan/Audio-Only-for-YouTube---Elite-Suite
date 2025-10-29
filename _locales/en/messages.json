@@ -1,0 +1,18 @@
+{
+  "appName": {
+    "message": "Audio Only for YouTube™ - Elite Edition",
+    "description": "The name of the extension"
+  },
+  "appDescription": {
+    "message": "True audio-only experience. Saves bandwidth, battery, and your attention. Reclaim your focus.",
+    "description": "The description of the extension"
+  },
+  "popupTitle": {
+    "message": "Audio Only Controls - Elite Mode",
+    "description": "Title for the extension popup"
+  },
+  "toggleCommand": {
+    "message": "Toggle Audio-Only Mode",
+    "description": "Description for keyboard command"
+  }
+}

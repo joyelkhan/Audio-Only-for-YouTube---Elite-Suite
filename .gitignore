@@ -1,0 +1,94 @@
+# Audio Only for YouTube - Elite Edition
+# .gitignore
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Node.js (if using build tools in future)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Build and Distribution
+dist/
+build/
+*.crx
+*.pem
+*.zip
+
+# Temporary Files
+*.tmp
+*.temp
+*.log
+*.cache
+
+# Chrome Extension Specific
+# (Keep these if you want to track them)
+# icons/*.png  # Uncomment if you don't want to track generated icons
+
+# Development and Testing
+test/
+coverage/
+.nyc_output/
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# Backup Files
+*.bak
+*.backup
+*~
+
+# Archives
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Documentation Builds
+docs/_build/
+site/
+
+# macOS
+.AppleDouble
+.LSOverride
+
+# Windows
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+.directory
+.Trash-*
+
+# Private Notes
+PRIVATE.md
+TODO_PRIVATE.md
+notes.txt
