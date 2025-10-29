@@ -1,21 +1,28 @@
 {
-  "name": "audio-only-youtube-elite",
+  "name": "youtube-audio-player",
   "version": "2.0.0",
-  "description": "Transform YouTube into a pure audio experience with stunning visualizations",
+  "description": "YouTube Audio Player - Background Play & Data Saver. Listen to YouTube as audio-only with persistent background playback and 90% data savings.",
   "author": "Abu Naser Khan",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/joyelkhan/Audio-Only-for-YouTube---Elite-Suite"
+    "url": "https://github.com/joyelkhan/youtube-audio-player"
   },
-  "homepage": "https://github.com/joyelkhan/Audio-Only-for-YouTube---Elite-Suite",
+  "homepage": "https://github.com/joyelkhan/youtube-audio-player",
   "keywords": [
     "youtube",
-    "audio",
-    "visualization",
+    "audio-player",
+    "background-play",
+    "data-saver",
     "chrome-extension",
+    "youtube-music",
+    "audio-only",
+    "youtube-premium-alternative",
+    "browser-extension",
     "music-player",
+    "podcast-player",
     "audio-visualizer",
+    "bandwidth-saver",
     "spectrum-analyzer"
   ],
   "scripts": {

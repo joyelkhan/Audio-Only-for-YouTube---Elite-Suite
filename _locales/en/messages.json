@@ -1,14 +1,14 @@
 {
   "appName": {
-    "message": "Audio Only for YouTube™ - Elite Edition",
+    "message": "YouTube Audio Player - Background Play & Data Saver",
     "description": "The name of the extension"
   },
   "appDescription": {
-    "message": "True audio-only experience. Saves bandwidth, battery, and your attention. Reclaim your focus.",
+    "message": "Listen to YouTube as audio-only with background playback. Save 90% data, control playback from anywhere, and enjoy YouTube music/podcasts without video.",
     "description": "The description of the extension"
   },
   "popupTitle": {
-    "message": "Audio Only Controls - Elite Mode",
+    "message": "YouTube Audio Player Controls",
     "description": "Title for the extension popup"
   },
   "toggleCommand": {

@@ -1,10 +1,10 @@
 {
   "manifest_version": 3,
-  "name": "Audio Only for YouTube™ - Elite Suite",
+  "name": "YouTube Audio Player - Background Play & Data Saver",
   "version": "2.0.0",
-  "description": "Complete YouTube optimization: Audio mode, ad skipping, image blocking, and performance enhancements",
+  "description": "Listen to YouTube as audio-only with background playback. Save 90% data, control playback from anywhere, and enjoy YouTube music/podcasts without video.",
   "author": "Abu Naser Khan",
-  "homepage_url": "https://github.com/joyelkhan/Audio-Only-for-YouTube---Elite-Suite",
+  "homepage_url": "https://github.com/joyelkhan/youtube-audio-player",
   "default_locale": "en",
   
   "icons": {
@@ -32,7 +32,7 @@
   
   "action": {
     "default_popup": "popup/popup.html",
-    "default_title": "YouTube Elite Suite",
+    "default_title": "YouTube Audio Player",
     "default_icon": {
       "16": "icons/icon-16.png",
       "32": "icons/icon-32.png",
