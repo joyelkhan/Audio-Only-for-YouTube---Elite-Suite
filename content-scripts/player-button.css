@@ -8,7 +8,7 @@
     width: 48px;
     height: 48px;
     padding: 0;
-    margin: 0;
+    margin: 0 8px;
     border: none;
     background: transparent;
     cursor: pointer;
@@ -28,29 +28,23 @@
 
 /* Icon styling */
 .audio-viz-icon {
-    fill: #fff;
+    color: #fff;
     pointer-events: none;
 }
 
-/* Icon bars */
-.audio-viz-icon-bars .bar {
-    fill: #fff;
+.audio-viz-path {
+    stroke: #fff;
     opacity: 0.9;
 }
 
 /* Active state - change color to indicate it's on */
-.audio-viz-button.active .audio-viz-icon-bars .bar {
-    fill: #3ea6ff; /* YouTube's blue accent color */
+.audio-viz-button.active .audio-viz-path {
+    stroke: #3ea6ff; /* YouTube's blue accent color */
     opacity: 1;
 }
 
-/* Pause animations when active to show it's in a "set" state */
-.audio-viz-button.active .audio-viz-icon-bars .bar animate {
-    animation-play-state: paused;
-}
-
 /* Hover effect on icon */
-.audio-viz-button:hover .audio-viz-icon-bars .bar {
+.audio-viz-button:hover .audio-viz-path {
     opacity: 1;
 }
 
@@ -141,12 +135,12 @@ html[system-theme="dark"] .audio-viz-toast {
     z-index: 100;
 }
 
-/* Match YouTube's button spacing */
-.ytp-right-controls .audio-viz-button {
-    margin-right: 0;
+/* Match YouTube's button spacing for left controls */
+.ytp-left-controls .audio-viz-button {
+    margin-left: 8px;
 }
 
 /* Ensure proper alignment with other YouTube controls */
-.ytp-right-controls .audio-viz-button svg {
+.ytp-left-controls .audio-viz-button svg {
     vertical-align: middle;
 }

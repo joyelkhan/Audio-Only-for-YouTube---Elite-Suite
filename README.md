@@ -76,24 +76,24 @@
 ### Quick Start
 
 1. **Install the extension** and navigate to any YouTube video
-2. **Click the waveform button** in the video player controls (bottom-right corner) OR click the extension icon OR press `Ctrl+Shift+A`
+2. **Click the wave button** in the video player controls (left side, after volume) OR click the extension icon OR press `Ctrl+Shift+A`
 3. **Choose your visualization skin** from the options page (optional)
 4. **Enjoy background audio playback** - audio continues even when you switch tabs or minimize the browser
 
 ### 🎵 NEW: In-Player Toggle Button
 
-**The fastest way to toggle audio visualization!** A custom button now appears directly in YouTube's video player control bar, right next to the CC (subtitles), settings, and fullscreen buttons.
+**The fastest way to toggle audio visualization!** A custom button now appears directly in YouTube's video player control bar, in the left controls area (after the volume slider).
 
 **Features:**
 - 🎯 **One-click toggle** - No need to open the extension popup
-- 🎨 **Animated waveform icon** - Visual feedback with bouncing bars
+- 🎨 **Simple wave icon** - Clean, minimal design
 - 💙 **Active state indicator** - Button turns blue when audio visualization is ON
 - 🔔 **Toast notifications** - Brief confirmation messages
 - ⌨️ **Fully accessible** - Keyboard navigation and screen reader support
 - 🔄 **Persistent** - Automatically appears on every video
 
 **How to use:**
-1. Look for the **waveform icon (🎵)** in the bottom-right player controls
+1. Look for the **wave icon** in the left player controls (after volume)
 2. **Click once** to activate audio visualization (button turns blue)
 3. **Click again** to return to normal video (button turns white)
 

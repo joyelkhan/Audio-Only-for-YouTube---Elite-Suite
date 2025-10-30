@@ -39,8 +39,8 @@ class PlayerButtonInjector {
     }
 
     getControlsContainer() {
-        // YouTube's right controls container (where CC, settings, fullscreen buttons are)
-        return document.querySelector('.ytp-right-controls');
+        // YouTube's left controls container (near play button)
+        return document.querySelector('.ytp-left-controls');
     }
 
     async injectButton() {
@@ -75,13 +75,8 @@ class PlayerButtonInjector {
             this.handleButtonClick();
         });
 
-        // Insert button before the settings button (or at the beginning of right controls)
-        const settingsButton = controlsContainer.querySelector('.ytp-settings-button');
-        if (settingsButton) {
-            controlsContainer.insertBefore(this.button, settingsButton);
-        } else {
-            controlsContainer.insertBefore(this.button, controlsContainer.firstChild);
-        }
+        // Insert button at the end of left controls (after volume)
+        controlsContainer.appendChild(this.button);
 
         this.isInjected = true;
         
@@ -92,32 +87,11 @@ class PlayerButtonInjector {
     }
 
     getButtonIcon() {
-        // Custom SVG icon for audio visualization
-        // Using a waveform/equalizer style icon
+        // Simple audio wave icon
         return `
             <svg class="audio-viz-icon" height="100%" version="1.1" viewBox="0 0 36 36" width="100%">
-                <g class="audio-viz-icon-bars">
-                    <rect x="6" y="14" width="3" height="8" rx="1.5" class="bar bar-1">
-                        <animate attributeName="height" values="8;16;8" dur="1.2s" repeatCount="indefinite" />
-                        <animate attributeName="y" values="14;10;14" dur="1.2s" repeatCount="indefinite" />
-                    </rect>
-                    <rect x="11" y="10" width="3" height="16" rx="1.5" class="bar bar-2">
-                        <animate attributeName="height" values="16;22;16" dur="1s" repeatCount="indefinite" />
-                        <animate attributeName="y" values="10;7;10" dur="1s" repeatCount="indefinite" />
-                    </rect>
-                    <rect x="16" y="8" width="3" height="20" rx="1.5" class="bar bar-3">
-                        <animate attributeName="height" values="20;24;20" dur="0.8s" repeatCount="indefinite" />
-                        <animate attributeName="y" values="8;6;8" dur="0.8s" repeatCount="indefinite" />
-                    </rect>
-                    <rect x="21" y="12" width="3" height="12" rx="1.5" class="bar bar-4">
-                        <animate attributeName="height" values="12;18;12" dur="1.1s" repeatCount="indefinite" />
-                        <animate attributeName="y" values="12;9;12" dur="1.1s" repeatCount="indefinite" />
-                    </rect>
-                    <rect x="26" y="15" width="3" height="6" rx="1.5" class="bar bar-5">
-                        <animate attributeName="height" values="6;14;6" dur="1.3s" repeatCount="indefinite" />
-                        <animate attributeName="y" values="15;11;15" dur="1.3s" repeatCount="indefinite" />
-                    </rect>
-                </g>
+                <path class="audio-viz-path" d="M8,18 L10,14 L12,22 L14,10 L16,26 L18,12 L20,24 L22,14 L24,20 L26,16 L28,18" 
+                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
         `;
     }
@@ -155,9 +129,6 @@ class PlayerButtonInjector {
         if (isActive) {
             this.button.classList.add('active');
             this.button.setAttribute('aria-pressed', 'true');
-            // Pause animations when active to show static state
-            const bars = this.button.querySelectorAll('.bar animate');
-            bars.forEach(anim => anim.beginElement());
         } else {
             this.button.classList.remove('active');
             this.button.setAttribute('aria-pressed', 'false');
