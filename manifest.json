@@ -48,11 +48,13 @@
         "content-scripts/visualization-engine.js",
         "content-scripts/skin-manager.js",
         "content-scripts/skin-selector-ui.js",
-        "content-scripts/controller.js"
+        "content-scripts/controller.js",
+        "content-scripts/player-button-injector.js"
       ],
       "css": [
         "content-scripts/overrides.css",
-        "content-scripts/skin-selector-ui.css"
+        "content-scripts/skin-selector-ui.css",
+        "content-scripts/player-button.css"
       ],
       "run_at": "document_end",
       "all_frames": false

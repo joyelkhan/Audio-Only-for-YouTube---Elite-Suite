@@ -34,6 +34,7 @@
 ## ✨ Key Features
 
 ### 🎧 Advanced YouTube Audio Playback
+- **In-Player Toggle Button** - NEW! Custom button in YouTube's control bar for instant audio visualization toggle
 - **One-Click Audio Mode** - Instantly convert any YouTube video to audio-only
 - **Persistent Background Play** - Audio continues through browser restarts and tab closing
 - **True Data Saving** - Streams only audio data, reducing bandwidth usage by 85-90%
@@ -75,9 +76,28 @@
 ### Quick Start
 
 1. **Install the extension** and navigate to any YouTube video
-2. **Click the extension icon** or press `Ctrl+Shift+A` to enable audio-only mode
+2. **Click the waveform button** in the video player controls (bottom-right corner) OR click the extension icon OR press `Ctrl+Shift+A`
 3. **Choose your visualization skin** from the options page (optional)
 4. **Enjoy background audio playback** - audio continues even when you switch tabs or minimize the browser
+
+### 🎵 NEW: In-Player Toggle Button
+
+**The fastest way to toggle audio visualization!** A custom button now appears directly in YouTube's video player control bar, right next to the CC (subtitles), settings, and fullscreen buttons.
+
+**Features:**
+- 🎯 **One-click toggle** - No need to open the extension popup
+- 🎨 **Animated waveform icon** - Visual feedback with bouncing bars
+- 💙 **Active state indicator** - Button turns blue when audio visualization is ON
+- 🔔 **Toast notifications** - Brief confirmation messages
+- ⌨️ **Fully accessible** - Keyboard navigation and screen reader support
+- 🔄 **Persistent** - Automatically appears on every video
+
+**How to use:**
+1. Look for the **waveform icon (🎵)** in the bottom-right player controls
+2. **Click once** to activate audio visualization (button turns blue)
+3. **Click again** to return to normal video (button turns white)
+
+> **Tip:** The button appears ~1 second after the video player loads. It works on both YouTube and YouTube Music!
 
 ### Keyboard Shortcuts
 
