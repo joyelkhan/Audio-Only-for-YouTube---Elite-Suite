@@ -3,95 +3,78 @@
 
 class PlayerButtonInjector {
     constructor() {
+        this.buttonAdded = false;
         this.button = null;
-        this.isInjected = false;
-        this.retryCount = 0;
-        this.maxRetries = 20;
-        this.observer = null;
-        
         this.init();
     }
 
     init() {
         console.log('[PlayerButton] Initializing button injector');
+        this.injectButton();
+        this.setupNavigationObserver();
+    }
+
+    injectButton() {
+        // Check if we're on a watch page and button doesn't exist
+        if (!this.isWatchPage() || this.buttonAdded) return;
         
-        // Wait for YouTube player to load
-        this.waitForPlayer();
-        
-        // Listen for navigation changes (YouTube is a SPA)
-        this.setupNavigationListener();
-    }
-
-    waitForPlayer() {
-        const checkInterval = setInterval(() => {
-            const controlsContainer = this.getControlsContainer();
-            
-            if (controlsContainer && !this.isInjected) {
-                clearInterval(checkInterval);
-                this.injectButton();
-            } else if (this.retryCount >= this.maxRetries) {
-                clearInterval(checkInterval);
-                console.log('[PlayerButton] Max retries reached, stopping');
-            }
-            
-            this.retryCount++;
-        }, 500);
-    }
-
-    getControlsContainer() {
-        // YouTube's left controls container (near play button)
-        return document.querySelector('.ytp-left-controls');
-    }
-
-    async injectButton() {
-        const controlsContainer = this.getControlsContainer();
-        if (!controlsContainer) {
-            console.log('[PlayerButton] Controls container not found');
+        const controls = document.querySelector('.ytp-right-controls');
+        if (!controls) {
+            setTimeout(() => this.injectButton(), 500);
             return;
         }
-
-        // Check if button already exists
-        if (document.getElementById('audio-viz-button')) {
-            console.log('[PlayerButton] Button already exists');
-            return;
-        }
-
-        console.log('[PlayerButton] Injecting button into player controls');
-
-        // Create the button element
-        this.button = document.createElement('button');
-        this.button.id = 'audio-viz-button';
-        this.button.className = 'ytp-button audio-viz-button';
-        this.button.setAttribute('aria-label', 'Toggle Audio Visualization');
-        this.button.setAttribute('title', 'Toggle Audio Visualization');
         
-        // Add SVG icon
-        this.button.innerHTML = this.getButtonIcon();
+        // Remove existing button if any
+        const existingBtn = controls.querySelector('.audio-viz-button');
+        if (existingBtn) existingBtn.remove();
+        
+        // Create and insert button
+        this.button = this.createButton();
+        const fullscreenBtn = controls.querySelector('.ytp-fullscreen-button');
+        
+        if (fullscreenBtn) {
+            controls.insertBefore(this.button, fullscreenBtn);
+        } else {
+            controls.appendChild(this.button);
+        }
+        
+        this.buttonAdded = true;
+        this.updateButtonState();
+        console.log('[PlayerButton] Button injected successfully');
+    }
+
+    isWatchPage() {
+        return window.location.href.includes('/watch');
+    }
+
+    createButton() {
+        const button = document.createElement('button');
+        button.className = 'ytp-button audio-viz-button';
+        button.setAttribute('aria-label', 'Toggle Audio Visualization');
+        button.setAttribute('title', 'Toggle Audio Visualization');
+        button.innerHTML = this.getButtonSVG();
         
         // Add click handler
-        this.button.addEventListener('click', (e) => {
+        button.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation();
             this.handleButtonClick();
         });
-
-        // Insert button at the end of left controls (after volume)
-        controlsContainer.appendChild(this.button);
-
-        this.isInjected = true;
         
-        // Update button state based on current audio mode
-        this.updateButtonState();
-        
-        console.log('[PlayerButton] Button injected successfully');
+        return button;
     }
 
-    getButtonIcon() {
-        // Simple audio wave icon
+    getButtonSVG() {
+        // Audio visualization icon - waveform style
         return `
-            <svg class="audio-viz-icon" height="100%" version="1.1" viewBox="0 0 36 36" width="100%">
-                <path class="audio-viz-path" d="M8,18 L10,14 L12,22 L14,10 L16,26 L18,12 L20,24 L22,14 L24,20 L26,16 L28,18" 
-                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg width="100%" height="100%" viewBox="0 0 36 36" style="pointer-events: none;">
+                <path class="audio-viz-path" 
+                      d="M8,18 L10,14 L12,22 L14,10 L16,26 L18,12 L20,24 L22,14 L24,20 L26,16 L28,18" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      stroke-width="2.5" 
+                      stroke-linecap="round" 
+                      stroke-linejoin="round"/>
             </svg>
         `;
     }
@@ -103,6 +86,7 @@ class PlayerButtonInjector {
         const controller = window.audioOnlyController;
         if (!controller) {
             console.log('[PlayerButton] Controller not found');
+            this.showNotification('Please wait, loading...');
             return;
         }
 
@@ -152,56 +136,29 @@ class PlayerButtonInjector {
         }, 2000);
     }
 
-    setupNavigationListener() {
-        // YouTube is a SPA, so we need to detect navigation
-        let lastUrl = location.href;
+    setupNavigationObserver() {
+        // Handle YouTube's SPA navigation
+        let currentUrl = window.location.href;
         
-        this.observer = new MutationObserver(() => {
-            const url = location.href;
-            if (url !== lastUrl) {
-                lastUrl = url;
-                this.handleNavigation();
+        const observer = new MutationObserver(() => {
+            if (window.location.href !== currentUrl) {
+                currentUrl = window.location.href;
+                this.buttonAdded = false;
+                this.button = null;
+                setTimeout(() => this.injectButton(), 1000);
             }
         });
-
-        this.observer.observe(document.body, {
+        
+        observer.observe(document.body, {
             childList: true,
             subtree: true
         });
     }
 
-    handleNavigation() {
-        console.log('[PlayerButton] Navigation detected');
-        
-        // Reset state
-        this.isInjected = false;
-        this.retryCount = 0;
-        this.button = null;
-        
-        // Re-inject button after a short delay
-        setTimeout(() => {
-            this.waitForPlayer();
-        }, 1000);
-    }
-
-    destroy() {
-        if (this.button) {
-            this.button.remove();
-            this.button = null;
-        }
-        
-        if (this.observer) {
-            this.observer.disconnect();
-            this.observer = null;
-        }
-        
-        this.isInjected = false;
-    }
 }
 
-// Initialize the button injector
+// Initialize when page loads
 if (!window.playerButtonInjector) {
-    // Wait for the controller to be ready
     const initButton = () => {
         if (window.audioOnlyController) {
             window.playerButtonInjector = new PlayerButtonInjector();
@@ -215,6 +172,4 @@ if (!window.playerButtonInjector) {
     } else {
         initButton();
     }
-} else {
-    console.log('[PlayerButton] Button injector already initialized');
 }

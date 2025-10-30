@@ -135,12 +135,12 @@ html[system-theme="dark"] .audio-viz-toast {
     z-index: 100;
 }
 
-/* Match YouTube's button spacing for left controls */
-.ytp-left-controls .audio-viz-button {
-    margin-left: 8px;
+/* Match YouTube's button spacing for right controls */
+.ytp-right-controls .audio-viz-button {
+    margin-right: 0;
 }
 
 /* Ensure proper alignment with other YouTube controls */
-.ytp-left-controls .audio-viz-button svg {
+.ytp-right-controls .audio-viz-button svg {
     vertical-align: middle;
 }
